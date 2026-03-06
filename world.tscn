@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ditlk7tgprjul"]
+
+[ext_resource type="PackedScene" uid="uid://tgtala425pmx" path="res://Player/Player.tscn" id="1_f3sb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
+size = Vector2(1219, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
+size = Vector2(179.5, 482.4375)
+
+[node name="World" type="Node2D" unique_id=693638326]
+
+[node name="Player" parent="." unique_id=1990537209 instance=ExtResource("1_f3sb7")]
+position = Vector2(782, 358)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=168584765]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1163627674]
+position = Vector2(578.5, 549)
+shape = SubResource("RectangleShape2D_fj7yv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=129460883]
+position = Vector2(-89.75, 241.21875)
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=339390241]
+position = Vector2(1242, 240)
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1195771296]
+offset_top = 448.0
+offset_right = 1153.0
+offset_bottom = 651.0

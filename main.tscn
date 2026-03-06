@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://toi8wgk2o12x"]
+
+[ext_resource type="Script" uid="uid://dwovk6wamlne6" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=973857323]
+script = ExtResource("1_ig7tw")
+
+[node name="Start" type="Button" parent="." unique_id=852692212]
+offset_left = 460.0
+offset_top = 231.0
+offset_right = 685.0
+offset_bottom = 323.0
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="." unique_id=996029393]
+offset_left = 462.0
+offset_top = 351.0
+offset_right = 687.0
+offset_bottom = 443.0
+text = "Exit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
