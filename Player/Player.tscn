@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://ilvvt2b5uwf4" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="14_yifbt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x70vp"]
+radius = 7.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wo5nf"]
 atlas = ExtResource("2_3mea3")
@@ -271,12 +273,14 @@ _data = {
 script = ExtResource("1_dm7nj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926522096]
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_x70vp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1922490564]
-position = Vector2(1, -4)
+position = Vector2(2, -5)
 sprite_frames = SubResource("SpriteFrames_bgaaw")
 animation = &"Idle"
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=242764292]
 zoom = Vector2(1.6, 1.6)
