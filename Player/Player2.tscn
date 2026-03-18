@@ -1,33 +1,34 @@
-[gd_scene format=3 uid="uid://tgtala425pmx"]
+[gd_scene format=3 uid="uid://cok2ubfig58h0"]
 
-[ext_resource type="Script" uid="uid://v6lt1oh30vf2" path="res://Player/Player.gd" id="1_dm7nj"]
-[ext_resource type="Texture2D" uid="uid://b3r6sqxxht0cb" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="2_3mea3"]
-[ext_resource type="Texture2D" uid="uid://cj25gqpx5cpet" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-1.png" id="3_dm7nj"]
-[ext_resource type="Texture2D" uid="uid://bkeni6x3ay3dn" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-2.png" id="4_3mea3"]
-[ext_resource type="Texture2D" uid="uid://cnp4atygtjboc" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-3.png" id="5_7v5gs"]
-[ext_resource type="Texture2D" uid="uid://csbvjy2wy7ovl" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-4.png" id="6_8sa4y"]
-[ext_resource type="Texture2D" uid="uid://df1jregan80wc" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/jump/player-jump-1.png" id="7_3nb2p"]
-[ext_resource type="Texture2D" uid="uid://dxqysg7e412jy" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/jump/player-jump-2.png" id="8_d7xyo"]
-[ext_resource type="Texture2D" uid="uid://uns2cysba0nf" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-1.png" id="9_evw08"]
-[ext_resource type="Texture2D" uid="uid://dk2yss52apech" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-2.png" id="10_roy6y"]
-[ext_resource type="Texture2D" uid="uid://cl7h6atggdi7m" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-3.png" id="11_u5tep"]
-[ext_resource type="Texture2D" uid="uid://cekbnk80sghbs" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-4.png" id="12_ps8ct"]
-[ext_resource type="Texture2D" uid="uid://c0wdt34cs1aeq" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-5.png" id="13_7uipr"]
-[ext_resource type="Texture2D" uid="uid://ilvvt2b5uwf4" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="14_yifbt"]
+[ext_resource type="Texture2D" uid="uid://b3r6sqxxht0cb" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="1_1ldg3"]
+[ext_resource type="Script" uid="uid://cugtup5bjm1kl" path="res://Player/Player2.gd" id="1_4b3p2"]
+[ext_resource type="Texture2D" uid="uid://cj25gqpx5cpet" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-1.png" id="2_4b3p2"]
+[ext_resource type="Texture2D" uid="uid://bkeni6x3ay3dn" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-2.png" id="3_cwyiw"]
+[ext_resource type="Texture2D" uid="uid://cnp4atygtjboc" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-3.png" id="4_d14qq"]
+[ext_resource type="Texture2D" uid="uid://csbvjy2wy7ovl" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/idle/player-idle-4.png" id="5_cyepj"]
+[ext_resource type="Texture2D" uid="uid://df1jregan80wc" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/jump/player-jump-1.png" id="6_laofy"]
+[ext_resource type="Texture2D" uid="uid://dxqysg7e412jy" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/jump/player-jump-2.png" id="7_rflj7"]
+[ext_resource type="Texture2D" uid="uid://uns2cysba0nf" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-1.png" id="8_ueh2n"]
+[ext_resource type="Texture2D" uid="uid://dk2yss52apech" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-2.png" id="9_txmm3"]
+[ext_resource type="Texture2D" uid="uid://cl7h6atggdi7m" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-3.png" id="10_5m8yu"]
+[ext_resource type="Texture2D" uid="uid://cekbnk80sghbs" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-4.png" id="11_f2f8t"]
+[ext_resource type="Texture2D" uid="uid://c0wdt34cs1aeq" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-5.png" id="12_dyk0x"]
+[ext_resource type="Texture2D" uid="uid://ilvvt2b5uwf4" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="13_b3q1a"]
+[ext_resource type="PackedScene" uid="uid://bj18hl6sstug4" path="res://interacting_component.tscn" id="15_cwyiw"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x70vp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pxbd"]
 radius = 7.0
 height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wo5nf"]
-atlas = ExtResource("2_3mea3")
+atlas = ExtResource("1_1ldg3")
 region = Rect2(0, 128, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_croik"]
-atlas = ExtResource("2_3mea3")
+atlas = ExtResource("1_1ldg3")
 region = Rect2(33, 128, 33, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bgaaw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e3th"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -42,16 +43,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_dm7nj")
+"texture": ExtResource("2_4b3p2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3mea3")
+"texture": ExtResource("3_cwyiw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7v5gs")
+"texture": ExtResource("4_d14qq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_8sa4y")
+"texture": ExtResource("5_cyepj")
 }],
 "loop": true,
 "name": &"Idle",
@@ -59,10 +60,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_3nb2p")
+"texture": ExtResource("6_laofy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_d7xyo")
+"texture": ExtResource("7_rflj7")
 }],
 "loop": true,
 "name": &"Jump",
@@ -70,22 +71,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_evw08")
+"texture": ExtResource("8_ueh2n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_roy6y")
+"texture": ExtResource("9_txmm3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_u5tep")
+"texture": ExtResource("10_5m8yu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_ps8ct")
+"texture": ExtResource("11_f2f8t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_7uipr")
+"texture": ExtResource("12_dyk0x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_yifbt")
+"texture": ExtResource("13_b3q1a")
 }],
 "loop": true,
 "name": &"Run",
@@ -259,7 +260,7 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_d7xyo"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tm0mj"]
 _data = {
 &"Death": SubResource("Animation_dm7nj"),
 &"Fall": SubResource("Animation_d7xyo"),
@@ -269,19 +270,20 @@ _data = {
 &"Run": SubResource("Animation_3nb2p")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1990537209]
-script = ExtResource("1_dm7nj")
+[node name="Player2" type="CharacterBody2D" unique_id=668105151]
+script = ExtResource("1_4b3p2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926522096]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273411803]
 position = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_x70vp")
+shape = SubResource("CapsuleShape2D_5pxbd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1922490564]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=821117759]
 position = Vector2(2, -5)
-sprite_frames = SubResource("SpriteFrames_bgaaw")
+sprite_frames = SubResource("SpriteFrames_6e3th")
 animation = &"Idle"
-metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1718271050]
-libraries/ = SubResource("AnimationLibrary_d7xyo")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=106970496]
+libraries/ = SubResource("AnimationLibrary_tm0mj")
 autoplay = &"Idle"
+
+[node name="InteractingComponent" parent="." unique_id=913154497 instance=ExtResource("15_cwyiw")]

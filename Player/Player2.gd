@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @onready var anim = get_node("AnimationPlayer")
 
-@export var action_left := "p1_left"
-@export var action_right := "p1_right"
-@export var action_jump := "p1_jump"
+@export var action_left := "p2_left"
+@export var action_right := "p2_right"
+@export var action_jump := "p2_jump"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0

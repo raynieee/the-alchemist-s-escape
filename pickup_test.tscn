@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bkfqfvule0x8t"]
+
+[ext_resource type="Script" uid="uid://bg3jhamfhp67u" path="res://pickup_test.gd" id="1_s4xss"]
+[ext_resource type="Texture2D" uid="uid://d103n52mtcw5b" path="res://Sunny Land Collection Files/Assets/Props Items and VFX/acorn/Sprites/acorn-1.png" id="2_q2hr2"]
+[ext_resource type="PackedScene" uid="uid://ctqfv4t34xyak" path="res://interactable.tscn" id="3_0236u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4xss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbnrw"]
+
+[node name="PickupTest" type="StaticBody2D" unique_id=19970972]
+script = ExtResource("1_s4xss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1569406370]
+shape = SubResource("CircleShape2D_s4xss")
+disabled = true
+
+[node name="Acorn1" type="Sprite2D" parent="." unique_id=459917225]
+texture = ExtResource("2_q2hr2")
+
+[node name="Interactable" parent="." unique_id=1106308672 instance=ExtResource("3_0236u")]
+interact_name = "Pickup"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2129106116]
+shape = SubResource("CircleShape2D_lbnrw")
