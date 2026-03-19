@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://tgtala425pmx" path="res://Player/Player.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://bx6gtf1vvdnxh" path="res://BG.tscn" id="1_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://cok2ubfig58h0" path="res://Player/Player2.tscn" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://dxto4lax2m2i1" path="res://Player/Player2.tscn" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://2f01wsgjwjuq" path="res://Sunny Land Collection Files/Assets/Environments/SunnyLand/Layers/tileset.png" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://5jloi2e0hfs1" path="res://touch_controls.tscn" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://b1cx5ofswixjp" path="res://touch_controls_2.tscn" id="6_dwbse"]
-[ext_resource type="PackedScene" uid="uid://bkfqfvule0x8t" path="res://pickup_test.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" path="res://touch_controls.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" path="res://touch_controls_2.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://tk7j8wkwxw7b" path="res://pickup_test.tscn" id="7_pkg7o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
 size = Vector2(1219, 205)
@@ -200,3 +200,6 @@ offset_bottom = 40.0
 
 [node name="PickupTest" parent="." unique_id=19970972 instance=ExtResource("7_pkg7o")]
 position = Vector2(374, 427)
+
+[node name="PickupTest2" parent="." unique_id=1090174983 instance=ExtResource("7_pkg7o")]
+position = Vector2(734, 427)

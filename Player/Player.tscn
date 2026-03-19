@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cekbnk80sghbs" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-4.png" id="12_ps8ct"]
 [ext_resource type="Texture2D" uid="uid://c0wdt34cs1aeq" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-5.png" id="13_7uipr"]
 [ext_resource type="Texture2D" uid="uid://ilvvt2b5uwf4" path="res://Sunny Land Collection Files/Assets/Characters/Players/Foxy/Sprites/run/player-run-6.png" id="14_yifbt"]
+[ext_resource type="PackedScene" uid="uid://bj18hl6sstug4" path="res://interacting_component.tscn" id="15_3mea3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x70vp"]
 radius = 7.0
@@ -285,3 +286,14 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1718271050]
 libraries/ = SubResource("AnimationLibrary_d7xyo")
 autoplay = &"Idle"
+
+[node name="InteractingComponent" parent="." unique_id=913154497 instance=ExtResource("15_3mea3")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1745767453]
+
+[node name="ItemIcon" type="TextureRect" parent="UI" unique_id=1820227921]
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 60.0
+offset_bottom = 59.0
+expand_mode = 2

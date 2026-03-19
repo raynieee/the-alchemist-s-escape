@@ -1,16 +1,21 @@
 extends Node2D
 
 @onready var interact_label: Label = $InteractLabel
+@export var interact_action := "p?_interact"
+
 var current_interactions := []
 var can_interact := true
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") and can_interact:
+	# Read the unique action from the player script dynamically
+	var action = owner.get("interact_action") if owner and "interact_action" in owner else interact_action
+	
+	if event.is_action_pressed(action) and can_interact:
 		if current_interactions:
 			can_interact = false
 			interact_label.hide()
 			
-			await current_interactions[0].interact.call()
+			await current_interactions[0].interact.call(owner)
 			
 			can_interact = true
 

@@ -6,8 +6,7 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 
-func _on_interact():
-	if sprite_2d.visible:
-		sprite_2d.hide()
-		interactable.is_interactable = false
-		print("the player picks this up!")
+func _on_interact(interactor: Node = null):
+	if interactor and interactor.has_method("pickup_item"):
+		if interactor.pickup_item(self):
+			get_parent().remove_child(self)

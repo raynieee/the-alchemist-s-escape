@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bkfqfvule0x8t"]
+[gd_scene format=3 uid="uid://tk7j8wkwxw7b"]
 
 [ext_resource type="Script" uid="uid://bg3jhamfhp67u" path="res://pickup_test.gd" id="1_s4xss"]
 [ext_resource type="Texture2D" uid="uid://d103n52mtcw5b" path="res://Sunny Land Collection Files/Assets/Props Items and VFX/acorn/Sprites/acorn-1.png" id="2_q2hr2"]
@@ -19,7 +19,7 @@ disabled = true
 texture = ExtResource("2_q2hr2")
 
 [node name="Interactable" parent="." unique_id=1106308672 instance=ExtResource("3_0236u")]
-interact_name = "Pickup"
+interact_name = "Pickup Item?"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2129106116]
 shape = SubResource("CircleShape2D_lbnrw")
