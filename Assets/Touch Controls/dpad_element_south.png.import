@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccll53h63r015"
-path="res://.godot/imported/dpad_element_north.png-882dca622e6eccd862103ff5805257e7.ctex"
+uid="uid://dhlpistj8q84u"
+path="res://.godot/imported/dpad_element_south.png-8194f61c296b49a920b3d747d0977183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Touch Controls/Default/dpad_element_north.png"
-dest_files=["res://.godot/imported/dpad_element_north.png-882dca622e6eccd862103ff5805257e7.ctex"]
+source_file="res://Assets/Touch Controls/dpad_element_south.png"
+dest_files=["res://.godot/imported/dpad_element_south.png-8194f61c296b49a920b3d747d0977183.ctex"]
 
 [params]
 

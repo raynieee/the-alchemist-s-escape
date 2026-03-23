@@ -53,6 +53,19 @@ func drop_item():
 			
 		print("Dropped item!")
 
+func remove_held_item() -> Node2D:
+	if held_item == null:
+		return null
+		
+	var item = held_item
+	held_item = null
+	
+	if item_icon:
+		item_icon.texture = null
+		item_icon.hide()
+		
+	return item
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(action_drop) and held_item:
 		drop_item()

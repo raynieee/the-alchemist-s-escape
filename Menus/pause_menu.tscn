@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cx5qd6t5lysl4"]
+
+[ext_resource type="Script" uid="uid://c7esv51ndf3w5" path="res://Menus/pause_menu.gd" id="1_pmgd"]
+[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://Assets/Fonts/Cardo-Bold.ttf" id="2_nwcfo"]
+
+[sub_resource type="Theme" id="Theme_05uyy"]
+default_font = ExtResource("2_nwcfo")
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=29537826]
+process_mode = 3
+script = ExtResource("1_pmgd")
+
+[node name="PauseButton" type="Button" parent="." unique_id=1561856452]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+text = "I I"
+
+[node name="PauseOverlay" type="Panel" parent="." unique_id=1995961154]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay" unique_id=1566981161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -75.0
+offset_right = 200.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_05uyy")
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="PauseOverlay/VBoxContainer" unique_id=1937077609]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="PauseOverlay/VBoxContainer" unique_id=311319419]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Quit to Level Selection"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseOverlay/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PauseOverlay/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

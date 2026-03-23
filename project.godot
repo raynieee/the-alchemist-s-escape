@@ -13,7 +13,10 @@ config_version=5
 config/name="The Alchemist's Escape"
 run/main_scene="uid://toi8wgk2o12x"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="*res://save_manager.gd"
 
 [input]
 

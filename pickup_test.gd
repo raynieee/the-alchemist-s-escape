@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var item_value: int = 1
 @onready var interactable: Area2D = $Interactable
 @onready var sprite_2d: Sprite2D = $Acorn1
 

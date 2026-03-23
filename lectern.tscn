@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://qwkavoopvfh2"]
+
+[ext_resource type="Script" uid="uid://r6g7hdp6ixju" path="res://lectern.gd" id="1_gho6x"]
+[ext_resource type="Texture2D" uid="uid://byqhbo4crshs5" path="res://Sunny Land Collection Files/Assets/Gemini_Generated_Image_4l0m554l0m554l0m.png" id="2_1uoqn"]
+[ext_resource type="PackedScene" uid="uid://ctqfv4t34xyak" path="res://interactable.tscn" id="3_sbxmx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_titx6"]
+radius = 14.0
+height = 50.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhacg"]
+radius = 18.0
+height = 52.0
+
+[node name="Lectern" type="StaticBody2D" unique_id=355046189]
+script = ExtResource("1_gho6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115885962]
+position = Vector2(30.125, 30.125)
+scale = Vector2(0.029174805, 0.029174805)
+texture = ExtResource("2_1uoqn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=773407189]
+position = Vector2(30, 30)
+shape = SubResource("CapsuleShape2D_titx6")
+
+[node name="Interactable" parent="." unique_id=1106308672 instance=ExtResource("3_sbxmx")]
+interact_name = "Submit Potion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=201998006]
+position = Vector2(30, 30)
+shape = SubResource("CapsuleShape2D_xhacg")

@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://cxab3x2s1yx6v"]
+
+[ext_resource type="Script" uid="uid://bxrjn2ui7lt5b" path="res://Menus/save_selection.gd" id="1_ab3cd"]
+[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://Assets/Fonts/Cardo-Bold.ttf" id="2_7wo4k"]
+[ext_resource type="FontFile" uid="uid://bmkg7sxkdwhp6" path="res://Assets/Fonts/Cardo-Regular.ttf" id="3_1owv3"]
+
+[sub_resource type="Theme" id="Theme_1owv3"]
+default_font = ExtResource("2_7wo4k")
+
+[sub_resource type="Theme" id="Theme_owdrw"]
+default_font = ExtResource("3_1owv3")
+
+[sub_resource type="Theme" id="Theme_oy72l"]
+default_font = ExtResource("3_1owv3")
+
+[sub_resource type="Theme" id="Theme_53xpb"]
+default_font = ExtResource("3_1owv3")
+
+[node name="SaveSelection" type="Control" unique_id=204106271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ab3cd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=248258910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.17080843, 0.18805781, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=535378814]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -180.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1owv3")
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1190039528]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Select Save Slot"
+horizontal_alignment = 1
+
+[node name="Slot1Button" type="Button" parent="VBoxContainer" unique_id=1271773780]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Slot 1: Empty"
+
+[node name="Slot2Button" type="Button" parent="VBoxContainer" unique_id=1136050644]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Slot 2: Empty"
+
+[node name="Slot3Button" type="Button" parent="VBoxContainer" unique_id=1008059079]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Slot 3: Empty"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=557585951]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1955161478]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back to Main Menu"
+
+[node name="NameDialog" type="ColorRect" parent="." unique_id=852238776]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Panel" type="Panel" parent="NameDialog" unique_id=1105544629]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.43100002
+anchor_right = 0.5
+anchor_bottom = 0.43100002
+offset_left = -250.0
+offset_top = -45.288025
+offset_right = 250.0
+offset_bottom = 145.71198
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NameDialog/Panel" unique_id=1150395654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_owdrw")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="NameDialog/Panel/VBoxContainer" unique_id=1110803931]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7wo4k")
+theme_override_font_sizes/font_size = 28
+text = "Enter Account Name"
+horizontal_alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="NameDialog/Panel/VBoxContainer" unique_id=157755493]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Account Name"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NameDialog/Panel/VBoxContainer" unique_id=83941004]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="NameDialog/Panel/VBoxContainer/HBoxContainer" unique_id=1962174087]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Create"
+
+[node name="CancelButton" type="Button" parent="NameDialog/Panel/VBoxContainer/HBoxContainer" unique_id=253979694]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Cancel"
+
+[node name="ActionDialog" type="ColorRect" parent="." unique_id=1692294107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Panel" type="Panel" parent="ActionDialog" unique_id=1640819610]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -140.0
+offset_right = 200.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActionDialog/Panel" unique_id=149117244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oy72l")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ActionDialog/Panel/VBoxContainer" unique_id=552719176]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7wo4k")
+theme_override_font_sizes/font_size = 32
+text = "Save Options"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="ActionDialog/Panel/VBoxContainer" unique_id=756923537]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Play"
+
+[node name="DeleteButton" type="Button" parent="ActionDialog/Panel/VBoxContainer" unique_id=1116584093]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Delete"
+
+[node name="CancelActionButton" type="Button" parent="ActionDialog/Panel/VBoxContainer" unique_id=84596946]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Cancel"
+
+[node name="ConfirmDeleteDialog" type="ColorRect" parent="." unique_id=1243563176]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0, 0, 0.784314)
+
+[node name="Panel" type="Panel" parent="ConfirmDeleteDialog" unique_id=944445886]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -120.0
+offset_right = 250.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmDeleteDialog/Panel" unique_id=921830836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_53xpb")
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ConfirmDeleteDialog/Panel/VBoxContainer" unique_id=1496032992]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7wo4k")
+theme_override_font_sizes/font_size = 32
+text = "Are you sure you want to delete this save?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="YesButton" type="Button" parent="ConfirmDeleteDialog/Panel/VBoxContainer" unique_id=2049467078]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Confirm"
+
+[node name="NoButton" type="Button" parent="ConfirmDeleteDialog/Panel/VBoxContainer" unique_id=1949634772]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Cancel"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="NameDialog/Panel/VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="NameDialog/Panel/VBoxContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ActionDialog/Panel/VBoxContainer/PlayButton" to="." method="_on_action_play_pressed"]
+[connection signal="pressed" from="ActionDialog/Panel/VBoxContainer/DeleteButton" to="." method="_on_action_delete_pressed"]
+[connection signal="pressed" from="ActionDialog/Panel/VBoxContainer/CancelActionButton" to="." method="_on_action_cancel_pressed"]
+[connection signal="pressed" from="ConfirmDeleteDialog/Panel/VBoxContainer/YesButton" to="." method="_on_confirm_delete_yes_pressed"]
+[connection signal="pressed" from="ConfirmDeleteDialog/Panel/VBoxContainer/NoButton" to="." method="_on_confirm_delete_no_pressed"]
