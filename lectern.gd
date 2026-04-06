@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-signal door_unlocked
-
 @export var required_sum: int = 4
 @export var required_items_count: int = 2
 
@@ -14,9 +12,12 @@ var is_unlocked: bool = false
 var players_who_submitted: Array[Node] = []
 
 @onready var interactable: Area2D = $Interactable
+@onready var sum_label: Label = $RequiredSumLabel
 
 func _ready() -> void:
 	interactable.interact = _on_interact
+	if sum_label:
+		sum_label.text = str(required_sum)
 
 func _on_interact(interactor: Node = null) -> void:
 	if is_unlocked:
@@ -75,5 +76,11 @@ func _on_interact(interactor: Node = null) -> void:
 func _unlock_door() -> void:
 	is_unlocked = true
 	interactable.is_interactable = false
-	print("Success! The right potions were mixed! The door is unlocked!")
-	door_unlocked.emit()
+	print("Success! The right potions were mixed! Moving to next day.")
+	
+	SaveManager.complete_level(SaveManager.current_playing_level)
+	if SaveManager.current_playing_level < 25:
+		SaveManager.current_playing_level += 1
+		SceneTransition.transition_to_next_day(SaveManager.current_playing_level)
+	else:
+		get_tree().change_scene_to_file("res://Menus/level_selection.tscn")

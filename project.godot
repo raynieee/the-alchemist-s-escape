@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Mobile")
 [autoload]
 
 SaveManager="*res://save_manager.gd"
+SceneTransition="*res://scene_transition.gd"
 
 [input]
 

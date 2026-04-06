@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://clo3f0ahskiiy" path="res://Menus/level_selection.gd" id="1_lsgd"]
 [ext_resource type="FontFile" uid="uid://bhjcvx4y54xpi" path="res://Assets/Fonts/Nickburg.otf" id="2_au0oc"]
-[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://Assets/Fonts/Cardo-Bold.ttf" id="3_fg0ae"]
+[ext_resource type="FontFile" uid="uid://debpw0qdmrona" path="res://Assets/Fonts/EnglishTowne.ttf" id="2_porbx"]
 
 [sub_resource type="Theme" id="Theme_rv05k"]
-default_font = ExtResource("3_fg0ae")
+default_font = ExtResource("2_porbx")
+default_font_size = 30
 
 [node name="LevelSelection" type="Control" unique_id=731021353]
 layout_mode = 3
@@ -30,28 +31,44 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -144.0
-offset_top = 40.0
-offset_right = 158.0
-offset_bottom = 90.0
+offset_left = -242.0
+offset_top = 21.0
+offset_right = -94.0
+offset_bottom = 134.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_porbx")
+theme_override_font_sizes/font_size = 100
+text = "1102"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1582484467]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -552.0
+offset_top = 44.0
+offset_right = -215.0
+offset_bottom = 133.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_au0oc")
-theme_override_font_sizes/font_size = 45
-text = "LEVEL SELECTION"
+theme_override_font_sizes/font_size = 73
+text = "JANUARY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelGrid" type="GridContainer" parent="." unique_id=285729414]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = -196.0
-offset_right = 224.0
-offset_bottom = 252.0
+anchor_left = 0.503
+anchor_top = 0.577
+anchor_right = 0.503
+anchor_bottom = 0.577
+offset_left = -224.45605
+offset_top = -223.89603
+offset_right = 223.54395
+offset_bottom = 224.10397
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_rv05k")
