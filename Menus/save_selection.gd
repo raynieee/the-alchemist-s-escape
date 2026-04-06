@@ -1,8 +1,8 @@
 extends Control
 
-@onready var slot_1 = $VBoxContainer/Slot1Button
-@onready var slot_2 = $VBoxContainer/Slot2Button
-@onready var slot_3 = $VBoxContainer/Slot3Button
+@onready var slot_1 = $VBoxContainer/HBoxContainer/Slot1Button
+@onready var slot_2 = $VBoxContainer/HBoxContainer/Slot2Button
+@onready var slot_3 = $VBoxContainer/HBoxContainer/Slot3Button
 
 @onready var name_dialog = $NameDialog
 @onready var name_input = $NameDialog/Panel/VBoxContainer/NameInput
@@ -22,6 +22,7 @@ func _ready() -> void:
 	slot_2.pressed.connect(func(): _on_slot_button_pressed(2))
 	slot_3.pressed.connect(func(): _on_slot_button_pressed(3))
 	
+	name_input.max_length = 12
 	update_slot_buttons()
 
 func update_slot_buttons() -> void:
@@ -31,11 +32,12 @@ func update_slot_buttons() -> void:
 		var slot_id = i + 1
 		var info = SaveManager.get_save_info(slot_id)
 		
+		slots[i].clip_text = true
 		if info.is_empty():
-			slots[i].text = "Slot %d: Empty" % slot_id
+			slots[i].text = "Slot %d:\nEmpty" % slot_id
 		else:
 			var acct_name = info.get("account_name", "Unknown")
-			slots[i].text = "Slot %d: %s" % [slot_id, acct_name]
+			slots[i].text = "Slot %d:\n%s" % [slot_id, acct_name]
 
 func _on_slot_button_pressed(slot_id: int) -> void:
 	var info = SaveManager.get_save_info(slot_id)

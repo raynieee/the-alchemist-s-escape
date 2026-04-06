@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhkxi1ldqnh5y"
-path="res://.godot/imported/Icon9.png-efd56ff2b08d2a82adef5d8ec81ac78a.ctex"
+uid="uid://b5m2fqvajdxj6"
+path="res://.godot/imported/TX Tileset Ground.png-2fdff99443d66bc40f1dee950a0b6527.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icon9.png"
-dest_files=["res://.godot/imported/Icon9.png-efd56ff2b08d2a82adef5d8ec81ac78a.ctex"]
+source_file="res://Assets/Floor/TX Tileset Ground.png"
+dest_files=["res://.godot/imported/TX Tileset Ground.png-2fdff99443d66bc40f1dee950a0b6527.ctex"]
 
 [params]
 
