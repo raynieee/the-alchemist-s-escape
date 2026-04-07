@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bx6gtf1vvdnxh" path="res://BG.tscn" id="1_rp5ft"]
 [ext_resource type="PackedScene" uid="uid://tgtala425pmx" path="res://Player/Player.tscn" id="2_qeqk5"]
 [ext_resource type="PackedScene" uid="uid://dxto4lax2m2i1" path="res://Player/Player2.tscn" id="3_1soli"]
-[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/TX Tileset Ground.png" id="5_4pbjs"]
+[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/Floor/TX Tileset Ground.png" id="5_4pbjs"]
 [ext_resource type="PackedScene" uid="uid://5jloi2e0hfs1" path="res://touch_controls.tscn" id="5_lmqi1"]
 [ext_resource type="PackedScene" uid="uid://b1cx5ofswixjp" path="res://touch_controls_2.tscn" id="6_5yfph"]
 [ext_resource type="PackedScene" uid="uid://tk7j8wkwxw7b" path="res://pickup_test.tscn" id="7_w6yvm"]
@@ -691,7 +691,7 @@ texture = ExtResource("5_4pbjs")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_4pbjs")
 
-[node name="World2" type="Node2D" unique_id=693638326]
+[node name="Level2" type="Node2D" unique_id=693638326]
 
 [node name="BG" parent="." unique_id=808150243 instance=ExtResource("1_rp5ft")]
 metadata/_edit_lock_ = true
@@ -743,6 +743,7 @@ offset_bottom = 40.0
 
 [node name="PickupTest" parent="." unique_id=19970972 instance=ExtResource("7_w6yvm")]
 position = Vector2(384, 394)
+item_value = 8.0
 
 [node name="Label" type="Label" parent="PickupTest" unique_id=360926003]
 offset_left = -1.0
@@ -750,12 +751,12 @@ offset_top = -7.0
 offset_right = 15.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("11_font")
-text = "1"
+text = "8"
 horizontal_alignment = 1
 
 [node name="PickupTest2" parent="." unique_id=1090174983 instance=ExtResource("7_w6yvm")]
 position = Vector2(694, 296)
-item_value = 2
+item_value = 4.0
 
 [node name="Label" type="Label" parent="PickupTest2" unique_id=1824207315]
 offset_left = -1.0
@@ -763,25 +764,26 @@ offset_top = -7.0
 offset_right = 15.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("11_font")
-text = "2"
-horizontal_alignment = 1
-
-[node name="PickupTest3" parent="." unique_id=1591460524 instance=ExtResource("7_w6yvm")]
-position = Vector2(607, 440)
-item_value = 3
-
-[node name="Label" type="Label" parent="PickupTest3" unique_id=1085151918]
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 15.0
-offset_bottom = 16.0
-theme_override_fonts/font = ExtResource("11_font")
-text = "3"
+text = "4"
 horizontal_alignment = 1
 
 [node name="Lectern" parent="." unique_id=355046189 instance=ExtResource("8_jcvcn")]
 position = Vector2(553, 254)
-required_sum = 3
+required_target = 12.0
+required_ratio = Vector2i(0, 0)
+
+[node name="RequiredSumLabel" type="Label" parent="Lectern" unique_id=629380944]
+offset_left = -19.0
+offset_top = -27.0
+offset_right = 81.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("11_font")
+theme_override_font_sizes/font_size = 25
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PauseMenu" parent="." unique_id=1198796056 instance=ExtResource("9_0ttnk")]
 

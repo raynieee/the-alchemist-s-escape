@@ -1,16 +1,16 @@
-[gd_scene format=4 uid="uid://gj7vgpoxpp6e"]
+[gd_scene format=4 uid="uid://d2amunv8q1fgu"]
 
-[ext_resource type="PackedScene" uid="uid://bx6gtf1vvdnxh" path="res://BG.tscn" id="1_rpnhq"]
-[ext_resource type="PackedScene" uid="uid://tgtala425pmx" path="res://Player/Player.tscn" id="2_hu0ol"]
-[ext_resource type="PackedScene" uid="uid://dxto4lax2m2i1" path="res://Player/Player2.tscn" id="3_m47b0"]
-[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/Floor/TX Tileset Ground.png" id="4_x7gsr"]
-[ext_resource type="PackedScene" uid="uid://5jloi2e0hfs1" path="res://touch_controls.tscn" id="5_uk1uv"]
-[ext_resource type="PackedScene" uid="uid://b1cx5ofswixjp" path="res://touch_controls_2.tscn" id="6_25373"]
-[ext_resource type="PackedScene" uid="uid://tk7j8wkwxw7b" path="res://pickup_test.tscn" id="7_vybpl"]
-[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://Assets/Fonts/Cardo-Bold.ttf" id="8_f6crn"]
-[ext_resource type="PackedScene" uid="uid://qwkavoopvfh2" path="res://lectern.tscn" id="9_k35fw"]
-[ext_resource type="PackedScene" uid="uid://cx5qd6t5lysl4" path="res://Menus/pause_menu.tscn" id="10_c02se"]
-[ext_resource type="Script" uid="uid://c1nkvp857pyeo" path="res://coop_camera.gd" id="11_1537k"]
+[ext_resource type="PackedScene" uid="uid://bx6gtf1vvdnxh" path="res://BG.tscn" id="1_5008v"]
+[ext_resource type="PackedScene" uid="uid://tgtala425pmx" path="res://Player/Player.tscn" id="2_iv344"]
+[ext_resource type="PackedScene" uid="uid://dxto4lax2m2i1" path="res://Player/Player2.tscn" id="3_jmbbd"]
+[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/Floor/TX Tileset Ground.png" id="4_hoj1y"]
+[ext_resource type="PackedScene" uid="uid://5jloi2e0hfs1" path="res://touch_controls.tscn" id="5_0y6jj"]
+[ext_resource type="PackedScene" uid="uid://b1cx5ofswixjp" path="res://touch_controls_2.tscn" id="6_vulay"]
+[ext_resource type="PackedScene" uid="uid://tk7j8wkwxw7b" path="res://pickup_test.tscn" id="7_1k73j"]
+[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://Assets/Fonts/Cardo-Bold.ttf" id="8_imrkm"]
+[ext_resource type="PackedScene" uid="uid://qwkavoopvfh2" path="res://lectern.tscn" id="9_orik1"]
+[ext_resource type="PackedScene" uid="uid://cx5qd6t5lysl4" path="res://Menus/pause_menu.tscn" id="10_47f0f"]
+[ext_resource type="Script" uid="uid://c1nkvp857pyeo" path="res://coop_camera.gd" id="11_uenwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o5kr"]
 size = Vector2(1546, 444.5)
@@ -19,7 +19,7 @@ size = Vector2(1546, 444.5)
 size = Vector2(179.5, 482.4375)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jyfw"]
-texture = ExtResource("4_x7gsr")
+texture = ExtResource("4_hoj1y")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -817,13 +817,13 @@ sources/1 = SubResource("TileSetAtlasSource_2jyfw")
 
 [node name="Level5" type="Node2D" unique_id=1619117058]
 
-[node name="BG" parent="." unique_id=808150243 instance=ExtResource("1_rpnhq")]
+[node name="BG" parent="." unique_id=808150243 instance=ExtResource("1_5008v")]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." unique_id=1990537209 instance=ExtResource("2_hu0ol")]
+[node name="Player" parent="." unique_id=1990537209 instance=ExtResource("2_iv344")]
 position = Vector2(41, 432)
 
-[node name="Player2" parent="." unique_id=668105151 instance=ExtResource("3_m47b0")]
+[node name="Player2" parent="." unique_id=668105151 instance=ExtResource("3_jmbbd")]
 position = Vector2(61, 435)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=236645977]
@@ -861,43 +861,43 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TouchControls" parent="Control" unique_id=842833175 instance=ExtResource("5_uk1uv")]
+[node name="TouchControls" parent="Control" unique_id=842833175 instance=ExtResource("5_0y6jj")]
 
-[node name="TouchControls2" parent="Control" unique_id=77609772 instance=ExtResource("6_25373")]
+[node name="TouchControls2" parent="Control" unique_id=77609772 instance=ExtResource("6_vulay")]
 
-[node name="PickupTest" parent="." unique_id=19970972 instance=ExtResource("7_vybpl")]
+[node name="PickupTest" parent="." unique_id=19970972 instance=ExtResource("7_1k73j")]
 position = Vector2(373, 437)
-item_value = 15.0
+item_value = 40.0
 
 [node name="Label" type="Label" parent="PickupTest" unique_id=580169014]
-offset_left = -8.0
+offset_left = -9.0
 offset_top = -29.0
-offset_right = 9.0
+offset_right = 8.0
 offset_bottom = -6.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("8_f6crn")
-text = "15"
+theme_override_fonts/font = ExtResource("8_imrkm")
+text = "40"
 horizontal_alignment = 1
 
-[node name="PickupTest2" parent="." unique_id=2107881042 instance=ExtResource("7_vybpl")]
+[node name="PickupTest2" parent="." unique_id=2107881042 instance=ExtResource("7_1k73j")]
 position = Vector2(734, 438)
-item_value = 5.0
+item_value = 23.0
 
 [node name="Label" type="Label" parent="PickupTest2" unique_id=813197178]
-offset_left = -4.0
+offset_left = -8.0
 offset_top = -28.0
-offset_right = 36.0
+offset_right = 9.0
 offset_bottom = -5.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("8_f6crn")
-text = "5"
+theme_override_fonts/font = ExtResource("8_imrkm")
+text = "23"
 
-[node name="Lectern" parent="." unique_id=355046189 instance=ExtResource("9_k35fw")]
+[node name="Lectern" parent="." unique_id=355046189 instance=ExtResource("9_orik1")]
 position = Vector2(766, 396)
-operation = 3
-required_target = 3.0
+operation = 1
+required_target = 17.0
 
 [node name="RequiredSumLabel" type="Label" parent="Lectern" unique_id=1335485024]
 offset_left = -19.0
@@ -906,15 +906,15 @@ offset_right = 81.0
 offset_bottom = 13.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("8_f6crn")
+theme_override_fonts/font = ExtResource("8_imrkm")
 theme_override_font_sizes/font_size = 25
-text = "3"
+text = "17"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseMenu" parent="." unique_id=29537826 instance=ExtResource("10_c02se")]
+[node name="PauseMenu" parent="." unique_id=29537826 instance=ExtResource("10_47f0f")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2080416317 node_paths=PackedStringArray("player1", "player2")]
-script = ExtResource("11_1537k")
+script = ExtResource("11_uenwt")
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")

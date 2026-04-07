@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://bq82sov67qdou"]
 
+[ext_resource type="PackedScene" uid="uid://bfdf3hn7xr0nl" path="res://dialogue_ui.tscn" id="1_dialogueui"]
 [ext_resource type="PackedScene" uid="uid://bx6gtf1vvdnxh" path="res://BG.tscn" id="1_f4pg2"]
+[ext_resource type="Script" uid="uid://dnjlhdykp8mue" path="res://Levels/level_1.gd" id="1_lvl1script"]
 [ext_resource type="PackedScene" uid="uid://tgtala425pmx" path="res://Player/Player.tscn" id="2_62b6n"]
 [ext_resource type="PackedScene" uid="uid://dxto4lax2m2i1" path="res://Player/Player2.tscn" id="3_rs4xw"]
-[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/TX Tileset Ground.png" id="4_rs4xw"]
+[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/Floor/TX Tileset Ground.png" id="4_rs4xw"]
 [ext_resource type="PackedScene" uid="uid://5jloi2e0hfs1" path="res://touch_controls.tscn" id="5_2hkqn"]
 [ext_resource type="PackedScene" uid="uid://b1cx5ofswixjp" path="res://touch_controls_2.tscn" id="6_34erp"]
 [ext_resource type="PackedScene" uid="uid://tk7j8wkwxw7b" path="res://pickup_test.tscn" id="7_k2bse"]
@@ -18,7 +20,7 @@ size = Vector2(1546, 444.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
 size = Vector2(179.5, 482.4375)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lk57d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62b6n"]
 texture = ExtResource("4_rs4xw")
 0:0/0 = 0
 1:0/0 = 0
@@ -687,9 +689,10 @@ texture = ExtResource("4_rs4xw")
 
 [sub_resource type="TileSet" id="TileSet_2hkqn"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_lk57d")
+sources/1 = SubResource("TileSetAtlasSource_62b6n")
 
-[node name="World" type="Node2D" unique_id=693638326]
+[node name="Level1" type="Node2D" unique_id=693638326]
+script = ExtResource("1_lvl1script")
 
 [node name="BG" parent="." unique_id=808150243 instance=ExtResource("1_f4pg2")]
 metadata/_edit_lock_ = true
@@ -741,7 +744,7 @@ offset_bottom = 40.0
 
 [node name="PickupTest" parent="." unique_id=19970972 instance=ExtResource("7_k2bse")]
 position = Vector2(373, 437)
-item_value = 0
+item_value = 3.0
 
 [node name="Label" type="Label" parent="PickupTest" unique_id=360926003]
 offset_left = -7.0
@@ -751,11 +754,12 @@ offset_bottom = -6.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("9_62b6n")
-text = "0"
+text = "3"
 horizontal_alignment = 1
 
 [node name="PickupTest2" parent="." unique_id=1090174983 instance=ExtResource("7_k2bse")]
 position = Vector2(734, 438)
+item_value = 4.0
 
 [node name="Label" type="Label" parent="PickupTest2" unique_id=1824207315]
 offset_left = -4.0
@@ -765,77 +769,31 @@ offset_bottom = -5.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("9_62b6n")
-text = "1"
+text = "4"
 
 [node name="Lectern" parent="." unique_id=355046189 instance=ExtResource("8_c7pbv")]
 position = Vector2(766, 396)
-required_sum = 1
+required_target = 7.0
+required_ratio = Vector2i(0, 0)
+
+[node name="RequiredSumLabel" type="Label" parent="Lectern" unique_id=1102728834]
+offset_left = -19.0
+offset_top = -27.0
+offset_right = 81.0
+offset_bottom = 13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("9_62b6n")
+theme_override_font_sizes/font_size = 25
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PauseMenu" parent="." unique_id=396683933 instance=ExtResource("9_77l7m")]
-visible = false
 
-[node name="TutorialLayer" type="CanvasLayer" parent="." unique_id=1425634837]
-layer = 5
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="TutorialLayer" unique_id=456920192]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color(0, 0, 0, 0.7)
-
-[node name="Panel" type="Panel" parent="TutorialLayer" unique_id=1750299436]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -200.0
-offset_right = 350.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TutorialLayer/Panel" unique_id=2034911457]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 40.0
-offset_right = -20.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="TutorialLayer/Panel/VBoxContainer" unique_id=1332903114]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Welcome to The Alchemist's Escape!"
-horizontal_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TutorialLayer/Panel/VBoxContainer" unique_id=1685581033]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[center]Work together to help the alchemists' unlock the seals on the doors. 
-
-You must take the potions to the golden lectern to solve the door's required sum.
-
-[color=cyan]Good luck!"
-
-[node name="StartButton" type="Button" parent="TutorialLayer/Panel/VBoxContainer" unique_id=183468795]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Got it!"
+[node name="DialogueUI" parent="." unique_id=772589529 instance=ExtResource("1_dialogueui")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=820996262 node_paths=PackedStringArray("player1", "player2")]
 script = ExtResource("11_62b6n")
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
-
-[connection signal="pressed" from="TutorialLayer/Panel/VBoxContainer/StartButton" to="TutorialLayer" method="hide"]
