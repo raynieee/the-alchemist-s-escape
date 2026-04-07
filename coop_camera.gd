@@ -1,8 +1,8 @@
 extends Camera2D
 class_name CoopCamera2D
 
-@export var player1: Node2D
-@export var player2: Node2D
+@export var player1: CharacterBody2D
+@export var player2: CharacterBody2D
 
 @export var min_zoom: float = 0.6
 @export var max_zoom: float = 2.0

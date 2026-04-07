@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cwvycaadesnrb" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/Background Layers/background.png" id="1_275co"]
 [ext_resource type="Texture2D" uid="uid://blkaragd3co7m" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/Background Layers/middleground.png" id="2_vcwcu"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vcwcu"]
+
 [node name="BG" type="Node2D" unique_id=808150243]
 texture_filter = 1
 
@@ -13,6 +15,7 @@ repeat_size = Vector2(241, 0)
 repeat_times = 12
 
 [node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=161883124]
+self_modulate = Color(0.6452097, 0.6452098, 0.6452097, 1)
 position = Vector2(120.66665, 117.46284)
 scale = Vector2(1.2569443, 1.2782397)
 texture = ExtResource("1_275co")
@@ -22,6 +25,8 @@ repeat_size = Vector2(1324.56, 0)
 repeat_times = 3
 
 [node name="Middleground" type="Sprite2D" parent="Parallax2D2" unique_id=478081043]
+self_modulate = Color(0.62352943, 0.62352943, 0.62352943, 1)
+material = SubResource("CanvasItemMaterial_vcwcu")
 position = Vector2(662.4001, 317.00003)
 scale = Vector2(3.4499996, 3.4499996)
 texture = ExtResource("2_vcwcu")

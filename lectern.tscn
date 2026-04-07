@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://r6g7hdp6ixju" path="res://lectern.gd" id="1_gho6x"]
 [ext_resource type="Texture2D" uid="uid://ctus8mcqhj7l4" path="res://Assets/Lectern.png" id="2_gho6x"]
 [ext_resource type="PackedScene" uid="uid://ctqfv4t34xyak" path="res://interactable.tscn" id="3_sbxmx"]
-[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://Assets/Fonts/Cardo-Bold.ttf" id="4_font"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_titx6"]
 radius = 14.0
@@ -31,16 +30,3 @@ interact_name = "Submit Potion"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=201998006]
 position = Vector2(30, 30)
 shape = SubResource("CapsuleShape2D_xhacg")
-
-[node name="RequiredSumLabel" type="Label" parent="." unique_id=987654321]
-offset_left = -19.0
-offset_top = -27.0
-offset_right = 81.0
-offset_bottom = 13.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("4_font")
-theme_override_font_sizes/font_size = 25
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
