@@ -1,29 +1,33 @@
 [gd_scene format=3 uid="uid://b1cx5ofswixjp"]
 
-[ext_resource type="Script" path="res://touch_controls_2.gd" id="1_slcbd"]
-[ext_resource type="Texture2D" uid="uid://c41byiqlcs8nh" path="res://Touch Controls/Default/dpad_element_east.png" id="2_gyy02"]
-[ext_resource type="Texture2D" uid="uid://7cbypoqdhoov" path="res://Touch Controls/Default/dpad_element_west.png" id="3_bllok"]
-[ext_resource type="Texture2D" uid="uid://dhlpistj8q84u" path="res://Touch Controls/Default/dpad_element_south.png" id="4_ea6it"]
-[ext_resource type="Texture2D" uid="uid://ccll53h63r015" path="res://Touch Controls/Default/dpad_element_north.png" id="5_f73de"]
+[ext_resource type="Script" uid="uid://b3bfkkatnpp4b" path="res://touch_controls_2.gd" id="1_slcbd"]
+[ext_resource type="Texture2D" uid="uid://d0mmte20o761o" path="res://Assets/Touch Controls/Left.png" id="2_slcbd"]
+[ext_resource type="Texture2D" uid="uid://bll6wek3pdu48" path="res://Assets/Touch Controls/Right.png" id="3_gyy02"]
+[ext_resource type="Texture2D" uid="uid://bxis8psowty5m" path="res://Assets/Touch Controls/Jump.png" id="4_bllok"]
+[ext_resource type="Texture2D" uid="uid://x4bqryakir7u" path="res://Assets/Touch Controls/Interact.png" id="6_interact"]
 
 [node name="TouchControls2" type="CanvasLayer" unique_id=77609772]
 script = ExtResource("1_slcbd")
 
-[node name="Left" type="TouchScreenButton" parent="." unique_id=566875116]
-position = Vector2(928, 485)
-texture_normal = ExtResource("2_gyy02")
+[node name="Left" type="TouchScreenButton" parent="." unique_id=328628384]
+position = Vector2(848, 519)
+scale = Vector2(0.040322583, 0.040322583)
+texture_normal = ExtResource("2_slcbd")
 
-[node name="Right" type="TouchScreenButton" parent="." unique_id=395929764]
-position = Vector2(1056, 486)
-texture_normal = ExtResource("3_bllok")
+[node name="Right" type="TouchScreenButton" parent="." unique_id=1339901364]
+position = Vector2(1029.0001, 523)
+scale = Vector2(0.040322565, 0.040322565)
+texture_normal = ExtResource("3_gyy02")
 
-[node name="Jump" type="TouchScreenButton" parent="." unique_id=615139517]
-position = Vector2(992, 421)
-texture_normal = ExtResource("4_ea6it")
+[node name="Jump" type="TouchScreenButton" parent="." unique_id=2070786923]
+position = Vector2(939.00006, 434.00003)
+scale = Vector2(0.04032258, 0.041330643)
+texture_normal = ExtResource("4_bllok")
 
-[node name="Down" type="TouchScreenButton" parent="." unique_id=1032185185]
-position = Vector2(992, 549)
-texture_normal = ExtResource("5_f73de")
+[node name="Interact" type="TouchScreenButton" parent="." unique_id=1332246196]
+position = Vector2(939, 523.00006)
+scale = Vector2(0.040322576, 0.040322576)
+texture_normal = ExtResource("6_interact")
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="released" from="Left" to="." method="_on_left_released"]
@@ -31,5 +35,5 @@ texture_normal = ExtResource("5_f73de")
 [connection signal="released" from="Right" to="." method="_on_right_released"]
 [connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]
 [connection signal="released" from="Jump" to="." method="_on_jump_released"]
-[connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
-[connection signal="released" from="Down" to="." method="_on_down_released"]
+[connection signal="pressed" from="Interact" to="." method="_on_interact_pressed"]
+[connection signal="released" from="Interact" to="." method="_on_interact_released"]

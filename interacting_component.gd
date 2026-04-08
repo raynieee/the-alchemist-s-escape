@@ -6,11 +6,11 @@ extends Node2D
 var current_interactions := []
 var can_interact := true
 
-func _input(event: InputEvent) -> void:
+func _process(_delta: float) -> void:
 	# Read the unique action from the player script dynamically
 	var action = owner.get("interact_action") if owner and "interact_action" in owner else interact_action
 	
-	if event.is_action_pressed(action) and can_interact:
+	if Input.is_action_just_pressed(action) and can_interact:
 		if current_interactions:
 			can_interact = false
 			interact_label.hide()
@@ -19,7 +19,6 @@ func _input(event: InputEvent) -> void:
 			
 			can_interact = true
 
-func _process(_delta: float) -> void:
 	if current_interactions and can_interact:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
