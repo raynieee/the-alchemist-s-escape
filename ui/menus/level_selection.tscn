@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dlngenmvp3ptr"]
+
+[ext_resource type="Script" uid="uid://clo3f0ahskiiy" path="res://ui/menus/level_selection.gd" id="1_lsgd"]
+[ext_resource type="FontFile" uid="uid://bhjcvx4y54xpi" path="res://assets/fonts/Nickburg.otf" id="2_au0oc"]
+[ext_resource type="FontFile" uid="uid://debpw0qdmrona" path="res://assets/fonts/EnglishTowne.ttf" id="2_porbx"]
+[ext_resource type="Texture2D" uid="uid://drkwmgqpwflnv" path="res://assets/sprites/signage.png" id="4_porbx"]
+
+[sub_resource type="Theme" id="Theme_rv05k"]
+default_font = ExtResource("2_porbx")
+default_font_size = 30
+
+[node name="LevelSelection" type="Control" unique_id=731021353]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lsgd")
+
+[node name="Label" type="Label" parent="." unique_id=1113540903]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 69.0
+offset_top = 24.0
+offset_right = 217.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6666667)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_porbx")
+theme_override_font_sizes/font_size = 100
+text = "1102"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1582484467]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.0
+offset_top = 43.0
+offset_right = 89.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6666667)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_au0oc")
+theme_override_font_sizes/font_size = 75
+text = "JANUARY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelGrid" type="GridContainer" parent="." unique_id=285729414]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.577
+anchor_right = 0.503
+anchor_bottom = 0.577
+offset_left = -224.45605
+offset_top = -213.89603
+offset_right = 223.54395
+offset_bottom = 234.10397
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_rv05k")
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="BackButton" type="Button" parent="." unique_id=1896778228]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 328.0
+offset_top = -72.0
+offset_right = 542.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_au0oc")
+theme_override_font_sizes/font_size = 25
+text = "Change Save File"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BackButton" unique_id=645315632]
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 0
+offset_right = 214.0
+offset_bottom = 40.0
+texture = ExtResource("4_porbx")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 3
+patch_margin_right = 3
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_pressed"]

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dsdpim0yrf0iu"
-path="res://.godot/imported/Cardo-Bold.ttf-753aa9d34ee31bd0cb4b113f6b087679.fontdata"
+path="res://.godot/imported/Cardo-Bold.ttf-e2fd8ca1033af64de030b64a480ae25e.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Cardo-Bold.ttf"
-dest_files=["res://.godot/imported/Cardo-Bold.ttf-753aa9d34ee31bd0cb4b113f6b087679.fontdata"]
+source_file="res://assets/fonts/Cardo-Bold.ttf"
+dest_files=["res://.godot/imported/Cardo-Bold.ttf-e2fd8ca1033af64de030b64a480ae25e.fontdata"]
 
 [params]
 

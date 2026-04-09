@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bfdf3hn7xr0nl"]
+
+[ext_resource type="Script" uid="uid://cl8qbonlnqy4f" path="res://ui/dialogue/dialogue_ui.gd" id="1_dialogue"]
+[ext_resource type="Texture2D" uid="uid://drkwmgqpwflnv" path="res://assets/sprites/signage.png" id="2_3wb7l"]
+[ext_resource type="FontFile" uid="uid://bmkg7sxkdwhp6" path="res://assets/fonts/Cardo-Regular.ttf" id="3_on5bt"]
+[ext_resource type="FontFile" uid="uid://dsdpim0yrf0iu" path="res://assets/fonts/Cardo-Bold.ttf" id="4_8t6yu"]
+[ext_resource type="FontFile" uid="uid://dyxelsmg10ct8" path="res://assets/fonts/Cardo-Italic.ttf" id="5_8rk5j"]
+
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1683644541]
+layer = 10
+script = ExtResource("1_dialogue")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1337727304]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=843359296]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -539.0
+offset_top = 185.0
+offset_right = 537.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3wb7l")
+patch_margin_left = 9
+patch_margin_right = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=598183686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=920965594]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_on5bt")
+theme_override_fonts/bold_font = ExtResource("4_8t6yu")
+theme_override_fonts/italics_font = ExtResource("5_8rk5j")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Sample Text[/center]"
+fit_content = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1029917878]
+wait_time = 0.04

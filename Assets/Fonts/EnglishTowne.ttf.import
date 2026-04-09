@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://debpw0qdmrona"
-path="res://.godot/imported/EnglishTowne.ttf-76125cb255259dd193fc6c5373e59e5a.fontdata"
+path="res://.godot/imported/EnglishTowne.ttf-6ebdefcdc0e6f68829dec30b67daddd3.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/EnglishTowne.ttf"
-dest_files=["res://.godot/imported/EnglishTowne.ttf-76125cb255259dd193fc6c5373e59e5a.fontdata"]
+source_file="res://assets/fonts/EnglishTowne.ttf"
+dest_files=["res://.godot/imported/EnglishTowne.ttf-6ebdefcdc0e6f68829dec30b67daddd3.fontdata"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bhjcvx4y54xpi"
-path="res://.godot/imported/Nickburg.otf-3aabeaa3603712581fb4d6ffc1d8677d.fontdata"
+path="res://.godot/imported/Nickburg.otf-d179a0f121918ef5a6b768901a6bed94.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Nickburg.otf"
-dest_files=["res://.godot/imported/Nickburg.otf-3aabeaa3603712581fb4d6ffc1d8677d.fontdata"]
+source_file="res://assets/fonts/Nickburg.otf"
+dest_files=["res://.godot/imported/Nickburg.otf-d179a0f121918ef5a6b768901a6bed94.fontdata"]
 
 [params]
 

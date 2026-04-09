@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://tk7j8wkwxw7b"]
+
+[ext_resource type="Script" uid="uid://bg3jhamfhp67u" path="res://objects/interactables/pickup_potion.gd" id="1_s4xss"]
+[ext_resource type="Texture2D" uid="uid://bhkxi1ldqnh5y" path="res://assets/sprites/objects/potions/blue_potion.png" id="2_s4xss"]
+[ext_resource type="PackedScene" uid="uid://ctqfv4t34xyak" path="res://objects/interactable.tscn" id="3_0236u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4xss"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbnrw"]
+radius = 6.0
+
+[node name="PickupTest" type="StaticBody2D" unique_id=19970972]
+script = ExtResource("1_s4xss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1569406370]
+shape = SubResource("CircleShape2D_s4xss")
+disabled = true
+
+[node name="Potion" type="Sprite2D" parent="." unique_id=459917225]
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("2_s4xss")
+
+[node name="Interactable" parent="." unique_id=1106308672 instance=ExtResource("3_0236u")]
+interact_name = "Pickup Item?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=2129106116]
+shape = SubResource("CircleShape2D_lbnrw")

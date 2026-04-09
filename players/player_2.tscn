@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://dxto4lax2m2i1"]
+
+[ext_resource type="Script" uid="uid://cugtup5bjm1kl" path="res://players/player_2.gd" id="1_4b3p2"]
+[ext_resource type="Texture2D" uid="uid://cw8401nhp468d" path="res://assets/sprites/characters/lily/lily_idle1.png" id="2_7ki0j"]
+[ext_resource type="Texture2D" uid="uid://dvn2thpm6d0pg" path="res://assets/sprites/characters/lily/lily_idle2.png" id="3_naojw"]
+[ext_resource type="Texture2D" uid="uid://cagdf6d74oibh" path="res://assets/sprites/characters/lily/lily_jump.png" id="4_lnguo"]
+[ext_resource type="Texture2D" uid="uid://daa1lwu0monkj" path="res://assets/sprites/characters/lily/lily_fall.png" id="5_e44fx"]
+[ext_resource type="Texture2D" uid="uid://drkwmgqpwflnv" path="res://assets/sprites/signage.png" id="7_naojw"]
+[ext_resource type="PackedScene" uid="uid://bj18hl6sstug4" path="res://players/interacting_component.tscn" id="15_cwyiw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pxbd"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e3th"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ki0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_naojw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lnguo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e44fx")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ki0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_naojw")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qbmvc"]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_438ru"]
+resource_name = "Idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_dywd4"]
+resource_name = "Jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1ldg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_4b3p2"]
+resource_name = "Run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwyiw"]
+_data = {
+&"Fall": SubResource("Animation_qbmvc"),
+&"Idle": SubResource("Animation_438ru"),
+&"Jump": SubResource("Animation_dywd4"),
+&"RESET": SubResource("Animation_1ldg3"),
+&"Run": SubResource("Animation_4b3p2")
+}
+
+[node name="Player2" type="CharacterBody2D" unique_id=668105151]
+script = ExtResource("1_4b3p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273411803]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_5pxbd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=821117759]
+position = Vector2(0.9999995, -4.7683716e-07)
+scale = Vector2(0.018680703, 0.018680703)
+sprite_frames = SubResource("SpriteFrames_6e3th")
+animation = &"Idle"
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1612282232]
+root_node = NodePath("../AnimatedSprite2D")
+libraries/ = SubResource("AnimationLibrary_cwyiw")
+
+[node name="InteractingComponent" parent="." unique_id=913154497 instance=ExtResource("15_cwyiw")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1387308011]
+
+[node name="ItemIcon" type="TextureRect" parent="UI" unique_id=921451229]
+anchors_preset = -1
+anchor_top = -0.0030864198
+anchor_bottom = -0.0030864198
+offset_left = 1202.0
+offset_top = 23.0
+offset_right = 1258.0
+offset_bottom = 79.0
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/ItemIcon" unique_id=1007072001]
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.111111104
+anchor_right = 0.98214287
+anchor_bottom = 0.8518519
+offset_top = 3.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_naojw")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_top = 1
+patch_margin_bottom = 1
+metadata/_edit_use_anchors_ = true
