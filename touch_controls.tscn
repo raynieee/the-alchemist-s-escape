@@ -10,22 +10,22 @@
 script = ExtResource("1_qpxdh")
 
 [node name="Left" type="TouchScreenButton" parent="." unique_id=1348027837]
-position = Vector2(32, 519)
+position = Vector2(48, 572.99994)
 scale = Vector2(0.040322583, 0.040322583)
 texture_normal = ExtResource("2_qpxdh")
 
 [node name="Right" type="TouchScreenButton" parent="." unique_id=602766206]
-position = Vector2(213.00002, 523)
+position = Vector2(229, 576.99994)
 scale = Vector2(0.040322565, 0.040322565)
 texture_normal = ExtResource("3_rq6v7")
 
 [node name="Jump" type="TouchScreenButton" parent="." unique_id=1497923213]
-position = Vector2(123, 434.00003)
+position = Vector2(139, 488)
 scale = Vector2(0.04032258, 0.041330643)
 texture_normal = ExtResource("4_gv3ke")
 
 [node name="Interact" type="TouchScreenButton" parent="." unique_id=1697938724]
-position = Vector2(123, 523.00006)
+position = Vector2(139, 577)
 scale = Vector2(0.040322576, 0.040322576)
 texture_normal = ExtResource("6_interact")
 

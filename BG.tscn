@@ -11,22 +11,43 @@ texture_filter = 1
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1326173495]
 scale = Vector2(3.0000002, 2.7)
 scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(241, 0)
-repeat_times = 12
+repeat_size = Vector2(120, 0)
+repeat_times = 9
 
 [node name="Background" type="Sprite2D" parent="Parallax2D" unique_id=161883124]
 self_modulate = Color(0.6452097, 0.6452098, 0.6452097, 1)
-position = Vector2(120.66665, 117.46284)
-scale = Vector2(1.2569443, 1.2782397)
+position = Vector2(63.33333, 86.296295)
+scale = Vector2(0.65972215, 0.6707038)
 texture = ExtResource("1_275co")
 
+[node name="ColorRect2" type="ColorRect" parent="Parallax2D" unique_id=174975789]
+offset_left = -0.33333588
+offset_top = 123.333336
+offset_right = 384.66666
+offset_bottom = 320.3704
+color = Color(0.49411765, 0.43137255, 0.05882353, 1)
+
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1516293650]
-repeat_size = Vector2(1324.56, 0)
-repeat_times = 3
+repeat_size = Vector2(726.57, 0)
+repeat_times = 5
 
 [node name="Middleground" type="Sprite2D" parent="Parallax2D2" unique_id=478081043]
 self_modulate = Color(0.62352943, 0.62352943, 0.62352943, 1)
 material = SubResource("CanvasItemMaterial_vcwcu")
-position = Vector2(662.4001, 317.00003)
-scale = Vector2(3.4499996, 3.4499996)
+position = Vector2(374.85013, 179.28127)
+scale = Vector2(1.9523436, 1.9523437)
 texture = ExtResource("2_vcwcu")
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D2" unique_id=1958140048]
+offset_left = 1.0
+offset_top = -142.99998
+offset_right = 1155.0
+offset_bottom = -2.9999847
+color = Color(0.28235295, 0.27450982, 0.101960786, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Parallax2D2" unique_id=1842404019]
+offset_left = 1.0
+offset_top = 411.0
+offset_right = 1155.0
+offset_bottom = 796.0
+color = Color(0.18431373, 0.13725491, 0.05490196, 1)

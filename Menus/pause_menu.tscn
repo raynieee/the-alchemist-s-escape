@@ -15,21 +15,22 @@ script = ExtResource("1_pmgd")
 [node name="PauseButton" type="Button" parent="." unique_id=1561856452]
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 60.0
-offset_bottom = 60.0
+offset_right = 78.0
+offset_bottom = 78.0
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_v7yoa")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 30
 text = "I I"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PauseButton" unique_id=851526343]
 show_behind_parent = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 58.0
+offset_bottom = 58.0
 texture = ExtResource("3_rxubw")
 
 [node name="PauseOverlay" type="Panel" parent="." unique_id=1995961154]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,9 +45,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -75.0
+offset_top = -115.0
 offset_right = 200.0
-offset_bottom = 65.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_05uyy")
@@ -61,6 +62,21 @@ theme_override_font_sizes/font_size = 35
 text = "Play"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PauseOverlay/VBoxContainer/PlayButton" unique_id=458828873]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 60.0
+texture = ExtResource("3_rxubw")
+
+[node name="RetryButton" type="Button" parent="PauseOverlay/VBoxContainer" unique_id=1832049182]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_v7yoa")
+theme_override_font_sizes/font_size = 35
+text = "Retry"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PauseOverlay/VBoxContainer/RetryButton" unique_id=2081572911]
 show_behind_parent = true
 layout_mode = 0
 offset_right = 400.0
@@ -84,4 +100,5 @@ texture = ExtResource("3_rxubw")
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="PauseOverlay/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="PauseOverlay/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="PauseOverlay/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

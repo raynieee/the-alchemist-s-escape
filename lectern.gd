@@ -24,6 +24,8 @@ var players_who_submitted: Array[Node] = []
 @onready var interactable: Area2D = $Interactable
 @onready var sum_label: Label = $RequiredSumLabel
 
+var glow_light: PointLight2D
+
 func _ready() -> void:
 	interactable.interact = _on_interact
 	if sum_label:
@@ -34,6 +36,48 @@ func _ready() -> void:
 				sum_label.text = str(int(required_target))
 			else:
 				sum_label.text = str(required_target)
+	
+	_create_glow_light()
+
+func _create_glow_light() -> void:
+	glow_light = PointLight2D.new()
+	glow_light.position = Vector2(0, -5)
+	
+	# Set color based on operation
+	var glow_color: Color
+	match operation:
+		Operator.ADD:
+			glow_color = Color(1.0, 0.2, 0.2, 1.0) # Red
+		Operator.SUB:
+			glow_color = Color(0.2, 0.4, 1.0, 1.0) # Blue
+		Operator.MUL:
+			glow_color = Color(1.0, 0.9, 0.2, 1.0) # Yellow
+		Operator.DIV:
+			glow_color = Color(0.2, 0.9, 0.3, 1.0) # Green
+		Operator.RATIO:
+			glow_color = Color(1.0, 0.4, 0.7, 1.0) # Pink
+	
+	glow_light.color = glow_color
+	glow_light.energy = 1.5
+	glow_light.texture_scale = 0.15
+	
+	# Create a simple gradient texture for the light
+	var gradient_tex = GradientTexture2D.new()
+	gradient_tex.width = 128
+	gradient_tex.height = 128
+	gradient_tex.fill = GradientTexture2D.FILL_RADIAL
+	gradient_tex.fill_from = Vector2(0.5, 0.5)
+	gradient_tex.fill_to = Vector2(0.5, 0.0)
+	var gradient = Gradient.new()
+	gradient.set_color(0, Color.WHITE)
+	gradient.set_color(1, Color(1, 1, 1, 0))
+	gradient_tex.gradient = gradient
+	
+	glow_light.texture = gradient_tex
+	add_child(glow_light)
+	
+	# Pulsing animation
+	_start_pulse()
 
 func _on_interact(interactor: Node = null) -> void:
 	if is_unlocked:
@@ -132,3 +176,10 @@ func _unlock_door() -> void:
 			SceneTransition.transition_to_next_day(SaveManager.current_playing_level)
 		else:
 			get_tree().change_scene_to_file("res://Menus/level_selection.tscn")
+
+func _start_pulse() -> void:
+	if not glow_light:
+		return
+	var tween = create_tween().set_loops()
+	tween.tween_property(glow_light, "energy", 2.5, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(glow_light, "energy", 1.0, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

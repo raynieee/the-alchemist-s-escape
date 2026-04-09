@@ -26,13 +26,11 @@ func _process(delta: float) -> void:
 	# Get the current screen size dynamically
 	var screen_size = get_viewport_rect().size
 	
-	# Calculate the required zoom. 
-	# We divide screen size by the current distance (plus padding margins)
+	# Calculate the required zoom based ONLY on horizontal distance
 	var zoom_x = screen_size.x / max(distance_x + margin_vector.x, 1.0)
-	var zoom_y = screen_size.y / max(distance_y + margin_vector.y, 1.0)
 	
-	# Take the smaller zoom value so both players securely fit on screen
-	var target_zoom_val = clamp(min(zoom_x, zoom_y), min_zoom, max_zoom)
+	# Clamp the horizontal zoom securely between max zoomed out (min_zoom) and fully zoomed in (max_zoom)
+	var target_zoom_val = clamp(zoom_x, min_zoom, max_zoom)
 	var target_zoom = Vector2(target_zoom_val, target_zoom_val)
 	
 	# Smoothly apply the zoom

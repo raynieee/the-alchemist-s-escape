@@ -5,18 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://drkwmgqpwflnv" path="res://Assets/Signage.png" id="3_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=973857323]
+position = Vector2(64, 24)
 script = ExtResource("1_ig7tw")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=534563934]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0732367, 0.17457622, 0.23328513, 1)
-metadata/_edit_lock_ = true
 
 [node name="Start" type="Button" parent="." unique_id=852692212]
 anchors_preset = -1
@@ -33,6 +23,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 50
 text = "Play"
+metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Start" unique_id=1069313959]
 show_behind_parent = true
@@ -44,6 +35,7 @@ texture = ExtResource("3_1bvp3")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_top = 3
 patch_margin_bottom = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="." unique_id=996029393]
 anchors_preset = -1
@@ -60,6 +52,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_0xm2m")
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Exit" unique_id=1986280527]
 show_behind_parent = true
@@ -71,6 +64,7 @@ texture = ExtResource("3_1bvp3")
 region_rect = Rect2(0, 0, 32, 32)
 patch_margin_top = 3
 patch_margin_bottom = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Title of Game" type="Label" parent="." unique_id=21777208]
 offset_left = 200.0
@@ -85,6 +79,7 @@ text = "The Alchemist's
 Escape"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

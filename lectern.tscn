@@ -1,32 +1,69 @@
 [gd_scene format=3 uid="uid://qwkavoopvfh2"]
 
 [ext_resource type="Script" uid="uid://r6g7hdp6ixju" path="res://lectern.gd" id="1_gho6x"]
-[ext_resource type="Texture2D" uid="uid://ctus8mcqhj7l4" path="res://Assets/Lectern.png" id="2_gho6x"]
+[ext_resource type="Texture2D" uid="uid://rkmsaenqntok" path="res://Assets/Lectern/Lectern1.png" id="2_8t77y"]
 [ext_resource type="PackedScene" uid="uid://ctqfv4t34xyak" path="res://interactable.tscn" id="3_sbxmx"]
+[ext_resource type="Texture2D" uid="uid://dvq0dtpmf41p7" path="res://Assets/Lectern/Lectern2.png" id="3_x71bx"]
+[ext_resource type="Texture2D" uid="uid://ntspkrgqimqw" path="res://Assets/Lectern/Lectern3.png" id="4_nv165"]
+[ext_resource type="Texture2D" uid="uid://ciumr8yspckm1" path="res://Assets/Lectern/Lectern4.png" id="5_f804n"]
+[ext_resource type="Texture2D" uid="uid://jjs1iywyx3kn" path="res://Assets/Lectern/Lectern5.png" id="6_cwrfj"]
+[ext_resource type="Texture2D" uid="uid://f302038l4arj" path="res://Assets/Lectern/Lectern6.png" id="7_3xe3e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecb5r"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8t77y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x71bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nv165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f804n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cwrfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3xe3e")
+}],
+"loop": true,
+"name": &"pageflip",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_titx6"]
-radius = 14.0
-height = 50.0
+radius = 9.0
+height = 38.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhacg"]
-radius = 18.0
-height = 52.0
+radius = 11.0
+height = 42.0
 
 [node name="Lectern" type="StaticBody2D" unique_id=355046189]
 script = ExtResource("1_gho6x")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115885962]
-position = Vector2(30.000004, 30)
-scale = Vector2(0.04259259, 0.04259259)
-texture = ExtResource("2_gho6x")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=555198146]
+position = Vector2(0, 1)
+scale = Vector2(0.018649193, 0.018649193)
+sprite_frames = SubResource("SpriteFrames_ecb5r")
+animation = &"pageflip"
+autoplay = "pageflip"
+frame_progress = 0.51512295
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=773407189]
-position = Vector2(30, 30)
 shape = SubResource("CapsuleShape2D_titx6")
 
 [node name="Interactable" parent="." unique_id=1106308672 instance=ExtResource("3_sbxmx")]
 interact_name = "Submit Potion"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=201998006]
-position = Vector2(30, 30)
 shape = SubResource("CapsuleShape2D_xhacg")
