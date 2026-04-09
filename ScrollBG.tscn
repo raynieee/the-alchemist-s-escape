@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dchy48q57wsyl"]
+
+[ext_resource type="Texture2D" uid="uid://cwvycaadesnrb" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/Background Layers/background.png" id="1_enndk"]
+[ext_resource type="Script" uid="uid://butl2aykmigy1" path="res://scroll_bg.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://blkaragd3co7m" path="res://Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/Background Layers/middleground.png" id="2_34fc6"]
+
+[node name="ScrollBg" type="Node2D" unique_id=1989332668]
+script = ExtResource("1_script")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1303294477]
+scale = Vector2(3.0000002, 2.7)
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(225, 0)
+autoscroll = Vector2(3, 0)
+repeat_times = 9
+
+[node name="Background" type="Sprite2D" parent="Parallax2D3" unique_id=822664716]
+self_modulate = Color(0.6452097, 0.6452098, 0.6452097, 1)
+position = Vector2(114.66666, 127.4074)
+scale = Vector2(1.1805553, 1.2002065)
+texture = ExtResource("1_enndk")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=984151792]
+repeat_size = Vector2(1520, 0)
+autoscroll = Vector2(15, 0)
+repeat_times = 4
+
+[node name="Middleground" type="Sprite2D" parent="Parallax2D4" unique_id=429423982]
+self_modulate = Color(0.62352943, 0.62352943, 0.62352943, 1)
+position = Vector2(592, 360)
+scale = Vector2(3.9583328, 3.9583333)
+texture = ExtResource("2_34fc6")
