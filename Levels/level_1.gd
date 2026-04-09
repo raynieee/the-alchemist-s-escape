@@ -9,17 +9,13 @@ enum LevelState { START, WAITING_FOR_POTIONS, WAITING_FOR_LECTERN, FINISHED }
 var current_state: LevelState = LevelState.START
 
 func _ready() -> void:
-	# Setup initial state
 	if lectern:
 		lectern.defer_level_transition = true
 		lectern.puzzle_solved.connect(_on_puzzle_solved)
 		
-	# Connect to dialogue finish
 	if dialogue_ui:
 		dialogue_ui.dialogue_finished.connect(_on_dialogue_finished)
 	
-	# Start introductory dialogue
-	# We slightly defer starting dialogue to ensure scene is loaded
 	call_deferred("_start_intro_dialogue")
 
 func _start_intro_dialogue() -> void:
@@ -29,7 +25,7 @@ func _start_intro_dialogue() -> void:
 			"See those potions on the floor? Pick them up."
 		])
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_state == LevelState.START and dialogue_ui and not dialogue_ui.is_active():
 		current_state = LevelState.WAITING_FOR_POTIONS
 		
@@ -54,7 +50,6 @@ func _on_puzzle_solved() -> void:
 
 func _on_dialogue_finished() -> void:
 	if current_state == LevelState.FINISHED:
-		# Final dialgoue completed, transition level manually
 		SaveManager.complete_level(SaveManager.current_playing_level)
 		if SaveManager.current_playing_level < 25:
 			SaveManager.current_playing_level += 1

@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://floor_button.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b5m2fqvajdxj6" path="res://Assets/Floor/TX Tileset Ground.png" id="2_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btn"]
+size = Vector2(28, 16)
+
+[node name="FloorButton" type="Area2D"]
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_btn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.8, 0.4, 0.4, 1)
+texture = ExtResource("2_texture")
+region_enabled = true
+region_rect = Rect2(160, 64, 32, 32)
