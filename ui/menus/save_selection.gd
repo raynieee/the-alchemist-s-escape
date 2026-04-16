@@ -67,7 +67,7 @@ func _on_action_cancel_pressed() -> void:
 func _on_action_play_pressed() -> void:
 	if pending_slot_id > 0:
 		if SaveManager.load_game(pending_slot_id):
-			get_tree().change_scene_to_file("res://Menus/level_selection.tscn")
+			get_tree().change_scene_to_file("res://ui/menus/level_selection.tscn")
 
 func _on_action_delete_pressed() -> void:
 	if pending_slot_id > 0:

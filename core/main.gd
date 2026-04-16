@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 func _on_exit_pressed() -> void:
@@ -6,4 +6,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Menus/save_selection.tscn")
+	get_tree().change_scene_to_file("res://ui/menus/save_selection.tscn")

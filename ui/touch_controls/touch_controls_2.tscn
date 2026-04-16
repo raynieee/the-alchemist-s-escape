@@ -9,31 +9,43 @@
 [node name="TouchControls2" type="CanvasLayer" unique_id=77609772]
 script = ExtResource("1_slcbd")
 
-[node name="Left" type="TouchScreenButton" parent="." unique_id=328628384]
-position = Vector2(960, 572.99994)
-scale = Vector2(0.040322583, 0.040322583)
+[node name="Control" type="Control" parent="." unique_id=1875143487]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = -720.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Left" type="TouchScreenButton" parent="Control" unique_id=1668708054]
+position = Vector2(880, 602)
+scale = Vector2(0.052419346, 0.048387095)
 texture_normal = ExtResource("2_slcbd")
 
-[node name="Right" type="TouchScreenButton" parent="." unique_id=1339901364]
-position = Vector2(1141.0001, 576.99994)
-scale = Vector2(0.040322565, 0.040322565)
+[node name="Right" type="TouchScreenButton" parent="Control" unique_id=1014189185]
+position = Vector2(1134, 605)
+scale = Vector2(0.048387095, 0.048387103)
 texture_normal = ExtResource("3_gyy02")
 
-[node name="Jump" type="TouchScreenButton" parent="." unique_id=2070786923]
-position = Vector2(1051, 488)
-scale = Vector2(0.04032258, 0.041330643)
+[node name="Jump" type="TouchScreenButton" parent="Control" unique_id=1942369610]
+position = Vector2(1009, 480)
+scale = Vector2(0.04989919, 0.04790318)
 texture_normal = ExtResource("4_bllok")
 
-[node name="Interact" type="TouchScreenButton" parent="." unique_id=1332246196]
-position = Vector2(1051, 577)
-scale = Vector2(0.040322576, 0.040322576)
+[node name="Interact" type="TouchScreenButton" parent="Control" unique_id=717818278]
+position = Vector2(997.99994, 589.00006)
+scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("6_interact")
 
-[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
-[connection signal="released" from="Left" to="." method="_on_left_released"]
-[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
-[connection signal="released" from="Right" to="." method="_on_right_released"]
-[connection signal="pressed" from="Jump" to="." method="_on_jump_pressed"]
-[connection signal="released" from="Jump" to="." method="_on_jump_released"]
-[connection signal="pressed" from="Interact" to="." method="_on_interact_pressed"]
-[connection signal="released" from="Interact" to="." method="_on_interact_released"]
+[connection signal="pressed" from="Control/Left" to="." method="_on_left_pressed"]
+[connection signal="released" from="Control/Left" to="." method="_on_left_released"]
+[connection signal="pressed" from="Control/Right" to="." method="_on_right_pressed"]
+[connection signal="released" from="Control/Right" to="." method="_on_right_released"]
+[connection signal="pressed" from="Control/Jump" to="." method="_on_jump_pressed"]
+[connection signal="released" from="Control/Jump" to="." method="_on_jump_released"]
+[connection signal="pressed" from="Control/Interact" to="." method="_on_interact_pressed"]
+[connection signal="released" from="Control/Interact" to="." method="_on_interact_released"]

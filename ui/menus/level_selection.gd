@@ -2,7 +2,7 @@ extends Control
 
 @onready var grid = $LevelGrid
 
-var btn_scene = preload("res://Menus/level_button.tscn")
+var btn_scene = preload("res://ui/menus/level_button.tscn")
 
 func _ready() -> void:
 	var unlocked = SaveManager.get_highest_unlocked_level()
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _on_level_btn_pressed(level_id: int) -> void:
 	SaveManager.current_playing_level = level_id
-	get_tree().change_scene_to_file("res://Levels/level_" + str(level_id) + ".tscn")
+	get_tree().change_scene_to_file("res://levels/level_" + str(level_id) + ".tscn")
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://Menus/save_selection.tscn")
+	get_tree().change_scene_to_file("res://ui/menus/save_selection.tscn")

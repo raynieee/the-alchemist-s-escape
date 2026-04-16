@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-@onready var left: TouchScreenButton = $Left
-@onready var right: TouchScreenButton = $Right
-@onready var jump: TouchScreenButton = $Jump
-@onready var interact: TouchScreenButton = $Interact
+@onready var left: TouchScreenButton = $Control/Left
+@onready var right: TouchScreenButton = $Control/Right
+@onready var jump: TouchScreenButton = $Control/Jump
+@onready var interact: TouchScreenButton = $Control/Interact
 
 @export var action_left := "p2_left"
 @export var action_right := "p2_right"

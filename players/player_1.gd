@@ -11,13 +11,13 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@onready var item_icon: TextureRect = get_node_or_null("UI/ItemIcon")
+@onready var item_icon: TextureRect = get_node_or_null("Control/UI/ItemIcon")
 
 var held_item: Node2D = null
 
 func _ready() -> void:
 	if not item_icon:
-		item_icon = get_node_or_null("UI/ItemIcon")
+		item_icon = get_node_or_null("Control/UI/ItemIcon")
 	if item_icon:
 		item_icon.mouse_filter = Control.MOUSE_FILTER_STOP
 		item_icon.gui_input.connect(_on_item_icon_gui_input)
@@ -42,7 +42,7 @@ func pickup_item(item: Node2D) -> bool:
 			break
 			
 	if not item_icon:
-		item_icon = get_node_or_null("UI/ItemIcon")
+		item_icon = get_node_or_null("Control/UI/ItemIcon")
 			
 	if sprite and item_icon:
 		item_icon.texture = sprite.texture
