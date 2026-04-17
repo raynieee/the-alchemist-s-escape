@@ -44,7 +44,7 @@ func transition_to_next_day(day_number: int) -> void:
 	tween.tween_property(color_rect, "modulate:a", 1.0, 0.5)
 	await tween.finished
 	
-	get_tree().change_scene_to_file("res://Levels/level_" + str(day_number) + ".tscn")
+	get_tree().change_scene_to_file("res://levels/level_" + str(day_number) + ".tscn")
 	
 	# Wait a bit
 	await get_tree().create_timer(1.0).timeout

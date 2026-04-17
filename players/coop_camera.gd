@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	
 	# 2. Zoom: Calculate how far apart they are on both axes
 	var distance_x = abs(player1.global_position.x - player2.global_position.x)
-	var distance_y = abs(player1.global_position.y - player2.global_position.y)
 	
 	# Get the current screen size dynamically
 	var screen_size = get_viewport_rect().size
