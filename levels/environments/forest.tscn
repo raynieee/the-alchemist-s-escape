@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bx6gtf1vvdnxh"]
 
-[ext_resource type="Texture2D" uid="uid://cwvycaadesnrb" path="res://assets/Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/Background Layers/background.png" id="1_275co"]
-[ext_resource type="Texture2D" uid="uid://blkaragd3co7m" path="res://assets/Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/Background Layers/middleground.png" id="2_vcwcu"]
+[ext_resource type="Texture2D" uid="uid://cwvycaadesnrb" path="res://assets/sprites/environments/bg/background.png" id="1_275co"]
+[ext_resource type="Texture2D" uid="uid://blkaragd3co7m" path="res://assets/sprites/environments/bg/middleground.png" id="2_vcwcu"]
+
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vcwcu"]
 
