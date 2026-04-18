@@ -8,8 +8,14 @@ extends CharacterBody2D
 @export var action_drop := "p1_drop_item"
 @export var interact_action := "p1_interact"
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var SPEED: float = 300.0
+@export var JUMP_VELOCITY: float = -400.0
+# Celeste timing: ~0.1s (6 frames at 60fps) to max speed = 3000.0
+@export var ACCELERATION: float = 3000.0
+# Celeste timing: ~0.067s (4 frames at 60fps) to stop = 4500.0
+@export var FRICTION: float = 4500.0
+@export var AIR_ACCELERATION: float = 2000.0
+@export var AIR_FRICTION: float = 1000.0
 
 @onready var item_icon: TextureRect = get_node_or_null("Control/UI/ItemIcon")
 
@@ -95,12 +101,15 @@ func _physics_process(delta: float) -> void:
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
 		
+	var current_accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
+	var current_fric = FRICTION if is_on_floor() else AIR_FRICTION
+
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, direction * SPEED, current_accel * delta)
 		if velocity.y == 0:
 			anim.play("Run")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, current_fric * delta)
 		if velocity.y == 0:
 			anim.play("Idle")
 	if velocity.y > 0:

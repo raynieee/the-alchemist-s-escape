@@ -30,7 +30,6 @@ offset_bottom = 58.0
 texture = ExtResource("3_rxubw")
 
 [node name="PauseOverlay" type="Panel" parent="." unique_id=1995961154]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

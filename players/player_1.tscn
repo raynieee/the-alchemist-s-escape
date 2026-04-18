@@ -203,6 +203,10 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=1990537209]
 script = ExtResource("1_dm7nj")
+SPEED = 250.0
+ACCELERATION = 1200.0
+FRICTION = 1000.0
+AIR_ACCELERATION = 3000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926522096]
 position = Vector2(1, 1)
@@ -224,9 +228,11 @@ autoplay = &"Idle"
 
 [node name="Control" type="Control" parent="." unique_id=324072985]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="UI" type="CanvasLayer" parent="Control" unique_id=1745767453]
 
