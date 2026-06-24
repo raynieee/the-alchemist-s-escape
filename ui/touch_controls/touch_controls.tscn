@@ -17,24 +17,25 @@ anchor_bottom = 1.0
 offset_top = -720.0
 offset_right = 1280.0
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="Left" type="TouchScreenButton" parent="Control" unique_id=1348027837]
-position = Vector2(56, 597)
+position = Vector2(56, 570)
 scale = Vector2(0.052419346, 0.048387095)
 texture_normal = ExtResource("2_qpxdh")
 
 [node name="Right" type="TouchScreenButton" parent="Control" unique_id=602766206]
-position = Vector2(310, 600)
+position = Vector2(310, 573)
 scale = Vector2(0.048387095, 0.048387103)
 texture_normal = ExtResource("3_rq6v7")
 
 [node name="Jump" type="TouchScreenButton" parent="Control" unique_id=1497923213]
-position = Vector2(185, 475)
+position = Vector2(185, 448)
 scale = Vector2(0.04989919, 0.04790318)
 texture_normal = ExtResource("4_gv3ke")
 
 [node name="Interact" type="TouchScreenButton" parent="Control" unique_id=1697938724]
-position = Vector2(174, 584.00006)
+position = Vector2(174, 557.00006)
 scale = Vector2(0.06, 0.06)
 texture_normal = ExtResource("6_interact")
 

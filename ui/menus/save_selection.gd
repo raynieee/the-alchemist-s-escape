@@ -5,7 +5,8 @@ extends Control
 @onready var slot_3 = $VBoxContainer/HBoxContainer/Slot3Button
 
 @onready var name_dialog = $NameDialog
-@onready var name_input = $NameDialog/Panel/VBoxContainer/NameInput
+@onready var name_input_1 = $NameDialog/Panel/VBoxContainer/NameInput1
+@onready var name_input_2 = $NameDialog/Panel/VBoxContainer/NameInput2
 
 @onready var action_dialog = $ActionDialog
 @onready var confirm_delete_dialog = $ConfirmDeleteDialog
@@ -22,7 +23,8 @@ func _ready() -> void:
 	slot_2.pressed.connect(func(): _on_slot_button_pressed(2))
 	slot_3.pressed.connect(func(): _on_slot_button_pressed(3))
 	
-	name_input.max_length = 12
+	name_input_1.max_length = 12
+	name_input_2.max_length = 12
 	update_slot_buttons()
 
 func update_slot_buttons() -> void:
@@ -45,9 +47,10 @@ func _on_slot_button_pressed(slot_id: int) -> void:
 	if info.is_empty():
 		# Ask for name
 		pending_slot_id = slot_id
-		name_input.text = ""
+		name_input_1.text = ""
+		name_input_2.text = ""
 		name_dialog.show()
-		name_input.grab_focus()
+		name_input_1.grab_focus()
 	else:
 		# Ask for action (Play or Delete)
 		pending_slot_id = slot_id
@@ -85,10 +88,13 @@ func _on_confirm_delete_no_pressed() -> void:
 	confirm_delete_dialog.hide()
 
 func _on_confirm_button_pressed() -> void:
-	var acct_name = name_input.text.strip_edges()
-	if acct_name == "":
-		acct_name = "Player" # Default fallback
+	var p1_name = name_input_1.text.strip_edges()
+	var p2_name = name_input_2.text.strip_edges()
+	if p1_name == "":
+		p1_name = "Player 1"
+	if p2_name == "":
+		p2_name = "Player 2"
 		
 	if pending_slot_id > 0:
-		SaveManager.create_new_save(pending_slot_id, acct_name)
+		SaveManager.create_new_save(pending_slot_id, p1_name, p2_name)
 		get_tree().change_scene_to_file("res://ui/menus/level_selection.tscn")

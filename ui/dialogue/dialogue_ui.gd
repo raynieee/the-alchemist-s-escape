@@ -18,7 +18,6 @@ func is_active() -> bool:
 	return visible
 
 func show_dialogue(lines: Array) -> void:
-	# Force cast to String
 	dialogue_queue.clear()
 	for line in lines:
 		dialogue_queue.append(str(line))
@@ -36,7 +35,7 @@ func _show_next_line() -> void:
 	label.text = "[center]" + current_text + "[/center]"
 	label.visible_characters = 0
 	is_typing = true
-	_timer.start(0.04) # Typing speed factor
+	_timer.start(0.04)
 
 func _on_timer_timeout() -> void:
 	label.visible_characters += 1
@@ -53,10 +52,6 @@ func _on_background_gui_input(event: InputEvent) -> void:
 func _handle_input() -> void:
 	if not visible:
 		return
-		
-	if is_typing:
-		# Do nothing (User requested: Don't allow them to skip text)
-		pass
 	else:
 		_show_next_line()
 
@@ -64,7 +59,6 @@ func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 		
-	# Consume unhandled input so gameplay stops
 	if event is InputEventScreenTouch and event.pressed:
 		get_viewport().set_input_as_handled()
 		_handle_input()

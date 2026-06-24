@@ -60,10 +60,12 @@ func complete_level(level_id: int) -> void:
 		current_save_data["highest_unlocked_level"] = level_id + 1
 		save_game()
 
-func create_new_save(slot_id: int, account_name: String) -> void:
+func create_new_save(slot_id: int, p1_name: String, p2_name: String) -> void:
 	current_save_slot = slot_id
 	current_save_data = {
-		"account_name": account_name,
+		"account_name": p1_name + " & " + p2_name,
+		"player_1_name": p1_name,
+		"player_2_name": p2_name,
 		"highest_unlocked_level": 1,
 		"creation_time": Time.get_datetime_string_from_system()
 	}

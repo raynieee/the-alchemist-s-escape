@@ -975,3 +975,4 @@ player2 = NodePath("../Player2")
 min_zoom = 1.7
 
 [node name="DialogueUI" parent="." unique_id=772589529 instance=ExtResource("1_dialogueui")]
+visible = false

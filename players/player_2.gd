@@ -8,14 +8,20 @@ extends CharacterBody2D
 @export var action_drop := "p2_drop_item"
 @export var interact_action := "p2_interact"
 
-@export var SPEED: float = 300.0
-@export var JUMP_VELOCITY: float = -400.0
-# Celeste timing: ~0.1s (6 frames at 60fps) to max speed = 3000.0
-@export var ACCELERATION: float = 3000.0
-# Celeste timing: ~0.067s (4 frames at 60fps) to stop = 4500.0
-@export var FRICTION: float = 4500.0
-@export var AIR_ACCELERATION: float = 2000.0
-@export var AIR_FRICTION: float = 1000.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+const GROUND_ACCEL = 1000.0
+const GROUND_DECEL = 3000.0
+const AIR_ACCEL = 800.0
+const AIR_DECEL = 2000.0
+const TURNAROUND_ACCEL = 5000.0
+
+const COYOTE_TIME = 0.1
+const JUMP_BUFFER_TIME = 0.15
+
+var coyote_timer = 0.0
+var jump_buffer_timer = 0.0
 
 @onready var item_icon: TextureRect = get_node_or_null("Control/UI/ItemIcon")
 
@@ -90,9 +96,23 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed(action_jump) and is_on_floor():
+	# Coyote Time & Jump Buffering timers update
+	if is_on_floor():
+		coyote_timer = COYOTE_TIME
+	else:
+		coyote_timer -= delta
+
+	if Input.is_action_just_pressed(action_jump):
+		jump_buffer_timer = JUMP_BUFFER_TIME
+	else:
+		jump_buffer_timer -= delta
+
+	# Jump trigger check
+	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
 		velocity.y = JUMP_VELOCITY
 		anim.play("Jump")
+		jump_buffer_timer = 0.0
+		coyote_timer = 0.0
 
 	var direction := Input.get_axis(action_left, action_right)
 	
@@ -101,18 +121,21 @@ func _physics_process(delta: float) -> void:
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
 	
-	var current_accel = ACCELERATION if is_on_floor() else AIR_ACCELERATION
-	var current_fric = FRICTION if is_on_floor() else AIR_FRICTION
+	var accel = GROUND_ACCEL if is_on_floor() else AIR_ACCEL
+	var decel = GROUND_DECEL if is_on_floor() else AIR_DECEL
 
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * SPEED, current_accel * delta)
+		if sign(direction) != sign(velocity.x) and velocity.x != 0:
+			velocity.x = move_toward(velocity.x, direction * SPEED, TURNAROUND_ACCEL * delta)
+		else:
+			velocity.x = move_toward(velocity.x, direction * SPEED, accel * delta)
 		if velocity.y == 0:
 			anim.play("Run")
 	else:
-		velocity.x = move_toward(velocity.x, 0, current_fric * delta)
+		velocity.x = move_toward(velocity.x, 0, decel * delta)
 		if velocity.y == 0:
 			anim.play("Idle")
 	if velocity.y > 0:
-			anim.play("Fall")
+		anim.play("Fall")
 
 	move_and_slide()
